@@ -8,7 +8,8 @@ contract NebulaTest is Test {
     Nebula public nebula;
 
     function setUp() public {
-        nebula = new Nebula();
+        // update with correct verifier contract address
+        nebula = new Nebula(0x5B38Da6a701c568545dCfcB03FcB875f56beddC4);
     }
 
     function testNebula() public {}
