@@ -5,5 +5,11 @@ import {Test, console} from "forge-std/Test.sol";
 import {Nebula} from "../src/Nebula.sol";
 
 contract NebulaTest is Test {
-    Nebla public nebula;
+    Nebula public nebula;
 
+    function setUp() public {
+        nebula = new Nebula();
+    }
+
+    function testNebula() public {}
+}
