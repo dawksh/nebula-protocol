@@ -27,7 +27,7 @@ interface IWorldID {
     ) external view;
 }
 
-contract WorldcoinVerifier {
+contract WorldIDVerifier {
     using ByteHasher for bytes;
 
     /// @notice Thrown when attempting to reuse a nullifier
@@ -75,7 +75,7 @@ contract WorldcoinVerifier {
 
         worldId.verifyProof(
             root,
-            groupId, // set to "1" in the constructor
+            groupId,
             abi.encodePacked(signal).hashToField(),
             nullifierHash,
             externalNullifierHash,
