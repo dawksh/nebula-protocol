@@ -2,29 +2,30 @@
 pragma solidity ^0.8.24;
 
 import {WorldIDVerifier} from "./WorldIDVerifier.sol";
+import {NebulaRegistry} from "./NebulaRegistry.sol";
+import {WorldIDProof} from "./Types.sol";
+import {INebulaResolver} from "./INebulaResolver.sol";
 
 contract Nebula {
     /// @dev Universal Nebula world id verifier
     WorldIDVerifier verifier;
+    NebulaRegistry registry;
 
-    struct WorldIDProof {
-        address signal;
-        uint256 root;
-        uint256 nullifierHash;
-        uint256[8] proof;
-    }
+    error ResolverIssueFail();
 
     /// @param _verifier Universal verifier for worldid
-    constructor(address _verifier) {
+    constructor(address _verifier, address _registry) {
         verifier = WorldIDVerifier(_verifier);
+        registry = NebulaRegistry(_registry);
     }
 
     /// @notice Verifies a given proof
     /// @param proof WorldID Proof
     /// @param identity WorldID Proof
-    function verifyIdentity(
+    function claimIdentity(
         WorldIDProof calldata proof,
-        bytes8 identity
+        bytes8 identity,
+        bytes calldata data
     ) external {
         verifier.verifyAndExecute(
             proof.signal,
@@ -33,6 +34,10 @@ contract Nebula {
             proof.proof
         );
 
-        // Resolve Identity, Verify and Issue
+        INebulaResolver resolver = INebulaResolver(registry.resolve(identity));
+
+        bool s = resolver.issue(msg.sender, data);
+
+        if (!s) revert ResolverIssueFail();
     }
 }
