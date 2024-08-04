@@ -11,6 +11,7 @@ contract Nebula {
     WorldIDVerifier verifier;
     NebulaRegistry registry;
 
+    /// @notice Error to be thrown when issuance is failed
     error ResolverIssueFail();
 
     /// @param _verifier Universal verifier for worldid
