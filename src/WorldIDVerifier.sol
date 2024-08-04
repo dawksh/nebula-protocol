@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.24;
+
 library ByteHasher {
     /// @dev Creates a keccak256 hash of a bytestring.
     /// @param value The bytestring to hash
