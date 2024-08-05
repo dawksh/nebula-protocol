@@ -28,14 +28,13 @@ contract Nebula {
         bytes8 identity,
         bytes calldata data
     ) external {
+        INebulaResolver resolver = INebulaResolver(registry.resolve(identity));
         verifier.verifyAndExecute(
-            proof.signal,
+            address(resolver),
             proof.root,
             proof.nullifierHash,
             proof.proof
         );
-
-        INebulaResolver resolver = INebulaResolver(registry.resolve(identity));
 
         bool s = resolver.issue(msg.sender, data);
 
