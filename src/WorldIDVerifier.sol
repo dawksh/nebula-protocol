@@ -67,7 +67,7 @@ contract WorldIDVerifier {
     /// @param nullifierHash The nullifier hash for this proof, preventing double signaling (returned by the IDKit widget).
     /// @param proof The zero-knowledge proof that demonstrates the claimer is registered with World ID (returned by the IDKit widget).
     function verifyAndExecute(
-        address signal,
+        bytes calldata signal,
         uint256 root,
         uint256 nullifierHash,
         uint256[8] calldata proof

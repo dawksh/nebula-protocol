@@ -6,6 +6,6 @@ attestation based identity oracle
 
 ```
 Deployer: 0x0a1B07c0a41c3Ea539AcfD6655dc7B76ccbF3030
-Deployed to: 0xe9B9259E11AEd1d84BFE688CfA7B5Fb86Ef39733
-Transaction hash: 0xb121d458ede02fef65b82441023c9d050dda0bb1f598a37fefbe07ea92a02261
+Deployed to: 0x2B6835cBD93632E7E49df029966BC8b5bb62a245
+Transaction hash: 0xe5b82f05eb4994b05b72810a025238ee13ef73f92822c9ed0c860227c103f11c
 ```
