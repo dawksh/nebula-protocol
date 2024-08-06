@@ -5,12 +5,14 @@ import {WorldIDVerifier} from "./WorldIDVerifier.sol";
 import {NebulaRegistry} from "./NebulaRegistry.sol";
 import {WorldIDProof} from "./Types.sol";
 import {INebulaResolver} from "./INebulaResolver.sol";
-import {IEAS} from "eas-contracts/IEAS.sol";
+import {IEAS, AttestationRequest, AttestationRequestData} from "eas-contracts/IEAS.sol";
+import {NO_EXPIRATION_TIME, EMPTY_UID} from "eas-contracts/Common.sol";
 
 contract Nebula {
     /// @dev Universal Nebula world id verifier
     WorldIDVerifier verifier;
     NebulaRegistry registry;
+    IEAS eas;
 
     /// @notice Errors to be thrown
     error ResolverIssueFail();
@@ -20,11 +22,13 @@ contract Nebula {
 
     mapping(address => mapping(bytes8 => bool)) userIdentityMapping;
     mapping(address => mapping(bytes8 => bytes)) userIdentityDataMapping;
+    mapping(address => bytes32) userAttestationMap;
 
     /// @param _verifier Universal verifier for worldid
-    constructor(address _verifier, address _registry) {
+    constructor(address _verifier, address _registry, address _eas) {
         verifier = WorldIDVerifier(_verifier);
         registry = NebulaRegistry(_registry);
+        eas = IEAS(_eas);
     }
 
     /// @notice Verifies a given proof and provides identity
@@ -51,10 +55,25 @@ contract Nebula {
 
         if (!s) revert ResolverIssueFail();
 
-        //TODO: Attest for identity
+        //TODO: Add schema
+
+        bytes32 uid = eas.attest(
+            AttestationRequest({
+                schema: 0,
+                data: AttestationRequestData({
+                    recipient: msg.sender,
+                    expirationTime: NO_EXPIRATION_TIME,
+                    revocable: true,
+                    refUID: EMPTY_UID,
+                    data: data,
+                    value: 0
+                })
+            })
+        );
 
         userIdentityMapping[msg.sender][identity] = true;
         userIdentityDataMapping[msg.sender][identity] = data;
+        userAttestationMap[msg.sender] = uid;
     }
 
     /// @notice Verifies previously issued identity to a user

@@ -14,7 +14,8 @@ contract NebulaTest is Test {
         // update with correct verifier contract address
         nebula = new Nebula(
             0x5B38Da6a701c568545dCfcB03FcB875f56beddC4,
-            address(registry)
+            address(registry),
+            0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
         );
     }
 
