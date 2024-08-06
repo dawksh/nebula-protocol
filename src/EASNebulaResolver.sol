@@ -22,7 +22,7 @@ contract EASNebulaResolver is SchemaResolver {
     function onRevoke(
         Attestation calldata attestation,
         uint256 /*value*/
-    ) internal pure override returns (bool) {
+    ) internal view override returns (bool) {
         return attestation.attester == address(nebula);
     }
 }
