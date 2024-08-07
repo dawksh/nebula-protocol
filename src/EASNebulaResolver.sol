@@ -8,7 +8,14 @@ import {IEAS, Attestation} from "eas-contracts/IEAS.sol";
 contract EASNebulaResolver is SchemaResolver {
     Nebula nebula;
 
-    constructor(Nebula _nebula, IEAS eas) SchemaResolver(eas) {
+    address owner;
+
+    constructor(IEAS eas) SchemaResolver(eas) {
+        owner = msg.sender;
+    }
+
+    function addOrUpdateNebula(Nebula _nebula) external {
+        if (msg.sender != owner) revert();
         nebula = _nebula;
     }
 

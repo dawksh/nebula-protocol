@@ -24,11 +24,19 @@ contract Nebula {
     mapping(address => mapping(bytes8 => bytes)) userIdentityDataMapping;
     mapping(address => bytes32) userAttestationMap;
 
+    bytes32 easSchema;
+
     /// @param _verifier Universal verifier for worldid
-    constructor(address _verifier, address _registry, address _eas) {
+    constructor(
+        address _verifier,
+        address _registry,
+        address _eas,
+        bytes32 _easSchema
+    ) {
         verifier = WorldIDVerifier(_verifier);
         registry = NebulaRegistry(_registry);
         eas = IEAS(_eas);
+        easSchema = _easSchema;
     }
 
     /// @notice Verifies a given proof and provides identity
@@ -59,7 +67,7 @@ contract Nebula {
 
         bytes32 uid = eas.attest(
             AttestationRequest({
-                schema: 0,
+                schema: easSchema,
                 data: AttestationRequestData({
                     recipient: msg.sender,
                     expirationTime: NO_EXPIRATION_TIME,

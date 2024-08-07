@@ -12,6 +12,22 @@ library ByteHasher {
 }
 
 interface IWorldID {
+    /// @param groupId The group identifier that was requested but does not exist.
+    error NoSuchGroup(uint256 groupId);
+
+    /// @notice The requested group has been disabled.
+    error GroupIsDisabled();
+
+    /// @notice Thrown when an attempt is made to renounce ownership.
+    error CannotRenounceOwnership();
+
+    /// @notice Thrown when attempting to validate a root that has expired.
+    error ExpiredRoot();
+
+    /// @notice Thrown when attempting to validate a root that has yet to be added to the root
+    ///         history.
+    error NonExistentRoot();
+
     /// @notice Reverts if the zero-knowledge proof is invalid.
     /// @param root The of the Merkle tree
     /// @param groupId The id of the Semaphore group

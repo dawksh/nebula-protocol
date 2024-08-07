@@ -6,5 +6,5 @@ struct WorldIDProof {
     address signal;
     uint256 root;
     uint256 nullifierHash;
-    uint256[8] proof;
+    bytes proof;
 }
