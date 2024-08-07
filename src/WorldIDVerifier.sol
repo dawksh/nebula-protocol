@@ -70,9 +70,11 @@ contract WorldIDVerifier {
         address signal,
         uint256 root,
         uint256 nullifierHash,
-        uint256[8] calldata proof
+        bytes calldata proof
     ) public {
         if (nullifierHashes[nullifierHash]) revert InvalidNullifier();
+
+        uint256[8] memory unpackedProof = abi.decode(proof, (uint256[8]));
 
         worldId.verifyProof(
             root,
@@ -80,7 +82,7 @@ contract WorldIDVerifier {
             abi.encodePacked(signal).hashToField(),
             nullifierHash,
             externalNullifierHash,
-            proof
+            unpackedProof
         );
         nullifierHashes[nullifierHash] = true;
     }
