@@ -73,7 +73,7 @@ contract Nebula {
                     expirationTime: NO_EXPIRATION_TIME,
                     revocable: true,
                     refUID: EMPTY_UID,
-                    data: data,
+                    data: abi.encode(resolver, data),
                     value: 0
                 })
             })
