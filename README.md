@@ -20,8 +20,8 @@ Transaction hash: 0x68fe9512b386273cd15ca113917de14b52d06c6ffead78db335fa66d67fb
 
 ```
 Deployer: 0x0a1B07c0a41c3Ea539AcfD6655dc7B76ccbF3030
-Deployed to: 0x2B6835cBD93632E7E49df029966BC8b5bb62a245
-Transaction hash: 0xd410f65cfa4be322ffc75d1c49ad6de5c69772e38ee05785ce6856a87ce37834
+Deployed to: 0xa3346FAeB77fD81C52342E691404C42F28045225
+Transaction hash: 0xd6210ba15d3748f4ffa2cf8db28518a49f25620180d057f1fbfffe26cf0a7579
 ```
 
 > EAS Schema
@@ -47,6 +47,14 @@ Transaction hash: 0x51cae504e1475c9780465a4346c4c80ba7633f309edabfcf8b37d4c124ab
 
 ```
 Deployer: 0x0a1B07c0a41c3Ea539AcfD6655dc7B76ccbF3030
-Deployed to: 0xe9B9259E11AEd1d84BFE688CfA7B5Fb86Ef39733
-Transaction hash: 0x089aec26f50670ee5bfb195e2ee38bb823737a9d80163b017e8ffc83c5eac044
+Deployed to: 0x597A11d6C6B74DB89A152A325e8a0d2a3C12747D
+Transaction hash: 0xd1c8c68b756b4e5f15c8b2d4c9c92c3dd190880ba07cb0daaa4f7f2ed2687fba
+```
+
+> Minimal Resolver
+
+```
+Deployer: 0x0a1B07c0a41c3Ea539AcfD6655dc7B76ccbF3030
+Deployed to: 0x6AEd7bEE61Ab97e6f371342F9F5858024be8CA34
+Transaction hash: 0x5668fab512bc5839b19f3504b3911e29f2bc8f41f4760f2f257473b1d71195ea
 ```
