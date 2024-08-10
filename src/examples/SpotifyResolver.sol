@@ -47,4 +47,9 @@ contract SpotifyResolver is INebulaResolver {
     ) external pure returns (bool) {
         return false;
     }
+
+    function updateOwner(address newOwner) external {
+        if (msg.sender != owner) revert();
+        owner = newOwner;
+    }
 }
