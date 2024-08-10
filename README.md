@@ -62,7 +62,7 @@ Transaction hash: 0x5668fab512bc5839b19f3504b3911e29f2bc8f41f4760f2f257473b1d711
 > Spotify Resolver
 
 ```
-Identifier: 0x9149ce687bb421d6
+Identifier: 0x337f034ec09d4dda
 Deployer: 0x0a1B07c0a41c3Ea539AcfD6655dc7B76ccbF3030
 Deployed to: 0x645B150c64aC771DA036EbA899C8765B1C5FC92d
 Transaction hash: 0x87d8bbb8c4661a7cb222ed1b5a1b5238a84c0c41951e1297a0119cf519b81629
