@@ -10,7 +10,6 @@ import {NO_EXPIRATION_TIME, EMPTY_UID} from "eas-contracts/Common.sol";
 
 contract Nebula {
     /// @dev Universal Nebula world id verifier
-    WorldIDVerifier verifier;
     NebulaRegistry registry;
     IEAS eas;
 
@@ -26,44 +25,23 @@ contract Nebula {
 
     bytes32 easSchema;
 
-    /// @param _verifier Universal verifier for worldid
-    constructor(
-        address _verifier,
-        address _registry,
-        address _eas,
-        bytes32 _easSchema
-    ) {
-        verifier = WorldIDVerifier(_verifier);
+    constructor(address _registry, address _eas, bytes32 _easSchema) {
         registry = NebulaRegistry(_registry);
         eas = IEAS(_eas);
         easSchema = _easSchema;
     }
 
     /// @notice Verifies a given proof and provides identity
-    /// @param proof WorldID Proof
-    /// @param identity WorldID Proof
-    function claimIdentity(
-        WorldIDProof calldata proof,
-        bytes8 identity,
-        bytes calldata data
-    ) external {
+    /// @param identity Identity identifier
+    function claimIdentity(bytes8 identity, bytes calldata data) external {
         if (userIdentityMapping[msg.sender][identity])
             revert IdentityAlreadyIssued();
 
         INebulaResolver resolver = INebulaResolver(registry.resolve(identity));
 
-        verifier.verifyAndExecute(
-            address(resolver),
-            proof.root,
-            proof.nullifierHash,
-            proof.proof
-        );
-
         bool s = resolver.issue(msg.sender, data);
 
         if (!s) revert ResolverIssueFail();
-
-        //TODO: Add schema
 
         bytes32 uid = eas.attest(
             AttestationRequest({
