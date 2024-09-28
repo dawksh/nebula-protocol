@@ -6,6 +6,33 @@ attestation based identity oracle
 
 ### Base Sepolia
 
+> Nebula
+
+```
+Deployer: 0x0a1B07c0a41c3Ea539AcfD6655dc7B76ccbF3030
+Deployed to: 0x68F3E3adc76D525671BA58e78885DA44713a5e05
+Transaction hash: 0x912e2844f3131c3118b24e9f7a1c467d0c7a3d3577561a03c27066b6a6f22175
+```
+
+> Nebula Registry
+
+```
+Deployer: 0x0a1B07c0a41c3Ea539AcfD6655dc7B76ccbF3030
+Deployed to: 0x4A4eB8f862Ebf0AA9ad6E7C0625f29390d8A64A9
+Transaction hash: 0x26eb91cb9852f1122262724711d9952efe840eb4bf4014d6a7c6d4e8a29d9872
+```
+
+> EAS Nebula Resolver
+
+```
+Deployer: 0x0a1B07c0a41c3Ea539AcfD6655dc7B76ccbF3030
+Deployed to: 0x019410a2783184C8aED09dE074324ABc77299dcD
+Transaction hash: 0x519ef0b0797ad03cacc1ed4863f30ad1a2fd6e03acf4901208c4aa411c44290f
+```
+
+> Attestation Schema
+> `0xfbc26d3c37ca199bc179d8435136dcc80e21868b0cef014feef696fc23cdb605`
+
 > WorldID Verifier
 
 ```
@@ -13,9 +40,6 @@ Deployer: 0x0a1B07c0a41c3Ea539AcfD6655dc7B76ccbF3030
 Deployed to: 0x4E2D12318497D8f41F010C1382cD82ae5BFBF4FE
 Transaction hash: 0x68fe9512b386273cd15ca113917de14b52d06c6ffead78db335fa66d67fb9894
 ```
-
-> Attestation Schema
-> `0xfbc26d3c37ca199bc179d8435136dcc80e21868b0cef014feef696fc23cdb605`
 
 ### Optimism Sepolia
 
