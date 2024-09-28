@@ -14,6 +14,9 @@ Deployed to: 0x4E2D12318497D8f41F010C1382cD82ae5BFBF4FE
 Transaction hash: 0x68fe9512b386273cd15ca113917de14b52d06c6ffead78db335fa66d67fb9894
 ```
 
+> Attestation Schema
+> `0xfbc26d3c37ca199bc179d8435136dcc80e21868b0cef014feef696fc23cdb605`
+
 ### Optimism Sepolia
 
 > Nebula Protocol
