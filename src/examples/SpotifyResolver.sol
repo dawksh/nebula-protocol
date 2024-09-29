@@ -25,10 +25,14 @@ contract SpotifyResolver is INebulaResolver {
         bytes32 r;
         bytes32 s;
         uint8 v;
-        (hash, r, s, v) = abi.decode(data, (bytes32, bytes32, bytes32, uint8));
+        bytes memory spotifyData;
+        (spotifyData, hash, r, s, v) = abi.decode(
+            data,
+            (bytes, bytes32, bytes32, bytes32, uint8)
+        );
         address signer = ecrecover(hash, v, r, s);
         if (signer != owner) return false;
-        userVerificationData[recipient] = data;
+        userVerificationData[recipient] = spotifyData;
         return true;
     }
 
