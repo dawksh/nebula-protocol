@@ -33,6 +33,14 @@ Transaction hash: 0x519ef0b0797ad03cacc1ed4863f30ad1a2fd6e03acf4901208c4aa411c44
 > Attestation Schema
 > `0xfbc26d3c37ca199bc179d8435136dcc80e21868b0cef014feef696fc23cdb605`
 
+> Spotify Resolver
+
+```
+Deployer: 0x0a1B07c0a41c3Ea539AcfD6655dc7B76ccbF3030
+Deployed to: 0x481D0C5E4179DD3eB0ce837807f795a116f67053
+Transaction hash: 0xcdc0c0f14e44b1c01a5ef97220671c33ebd9d35d69ae7ca5c91a8e2b6672d382
+```
+
 > WorldID Verifier
 
 ```
