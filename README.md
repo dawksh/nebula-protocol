@@ -37,8 +37,8 @@ Transaction hash: 0x519ef0b0797ad03cacc1ed4863f30ad1a2fd6e03acf4901208c4aa411c44
 
 ```
 Deployer: 0x0a1B07c0a41c3Ea539AcfD6655dc7B76ccbF3030
-Deployed to: 0x481D0C5E4179DD3eB0ce837807f795a116f67053
-Transaction hash: 0xcdc0c0f14e44b1c01a5ef97220671c33ebd9d35d69ae7ca5c91a8e2b6672d382
+Deployed to: 0xbD2322dC3195A2e725e2F8b7eCD3D7f6d2171Ebe
+Transaction hash: 0xe8606dc49622733fceca3cea908104a079b6b83752e24c1d78ec9ae007dc31c6
 ```
 
 > WorldID Verifier

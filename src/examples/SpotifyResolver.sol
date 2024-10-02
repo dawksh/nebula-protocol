@@ -52,6 +52,10 @@ contract SpotifyResolver is INebulaResolver {
         return false;
     }
 
+    function userData(address user) external view returns (bytes memory) {
+        return userVerificationData[user];
+    }
+
     function updateOwner(address newOwner) external {
         if (msg.sender != owner) revert();
         owner = newOwner;
